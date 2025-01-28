@@ -11,7 +11,7 @@ This repository contains a `docker-compose` configuration to set up a MySQL data
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/mysql-docker.git
+    git clone https://github.com/KznRkjp/mysql-docker.git
     cd mysql-docker
     ```
 
