@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mysql_db:
+    image: mysql:latest
+    restart: always
+    ports:
+      - "3906:3306"
+    env_file: ".env"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 3s
+      retries: 5
+      timeout: 5s
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - my-db:/var/lib/mysql
+volumes:
+  my-db:
